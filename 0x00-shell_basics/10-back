@@ -1,12 +1,2 @@
 #!/bin/bash
-# Get the current directory
-current_dir=$(pwd)
-
-# Extract the parent directory path
-parent_dir=$(dirname "$current_dir")
-
-# Change to the parent directory
-cd "$parent_dir"
-
-# Print the current directory
-pwd
+cd alx-system_engineering-devops
