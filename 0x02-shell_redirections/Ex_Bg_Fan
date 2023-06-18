@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Read the web server logs in TSV format from input
+read -p "Enter the web server logs in TSV format (press Ctrl+D to finish): " -d '' -a logs
+
+# Declare an associative array to store host/IP counts
+declare -A host_counts
+
+# Loop through the logs and count host/IP occurrences
+for log in "${logs[@]}"; do
+    host=$(echo "$log" | awk '{print $1}')
+    ((host_counts[$host]++))
+done
+
+# Loop through the host/IP counts and display the top 11 most active ones
+echo "Top 11 hosts or IP addresses by number of requests:"
+echo "----------------------------------------------"
+echo "Requests   Host/IP"
+
+for host in "${!host_counts[@]}"; do
+    echo "${host_counts[$host]}         $host"
+done | sort -rn | head -n 11
+
