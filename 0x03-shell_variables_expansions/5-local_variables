@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Local Variables:" && compgen -ve && compgen -A function
+compgen -ve -A function
