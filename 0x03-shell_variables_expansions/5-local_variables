@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "Local Variables:" && compgen -v; echo "Environment Variables:" && compgen -e; echo "Functions:" && compgen -A function
-
+echo "Local Variables:" && compgen -ve && compgen -A function
