@@ -1,2 +1,2 @@
 #!/bin/bash
-compgen -ve -A function
+set | less
